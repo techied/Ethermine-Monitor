@@ -99,6 +99,7 @@ public class Ethermine implements ActionListener, WindowStateListener {
 		panel.add(button);
 		panel.add(openEthermine);
 		frame.add(panel);
+		frame.setIconImage(new ImageIcon(getClass().getResource("bar.gif")).getImage());
 		frame.pack();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
