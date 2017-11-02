@@ -130,6 +130,7 @@ public class Ethermine implements ActionListener, WindowStateListener {
 		icon.setPopupMenu(popup);
 		frame.addWindowStateListener(this);
 		frame.setResizable(false);
+		frame.setTitle("Ethermine Monitor");
 		new Thread(new Runnable() {
 
 			@Override
