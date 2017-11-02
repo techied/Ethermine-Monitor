@@ -129,6 +129,7 @@ public class Ethermine implements ActionListener, WindowStateListener {
 		popup.add(avgHashItem);
 		icon.setPopupMenu(popup);
 		frame.addWindowStateListener(this);
+		frame.setResizable(false);
 		new Thread(new Runnable() {
 
 			@Override
@@ -139,7 +140,6 @@ public class Ethermine implements ActionListener, WindowStateListener {
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
-					System.out.print(System.currentTimeMillis() - 210000 + " > " + prevTimeMillis + "?");
 					if (System.currentTimeMillis() - 210000 > prevTimeMillis) {
 						prevTimeMillis = System.currentTimeMillis();
 						try {
@@ -148,7 +148,6 @@ public class Ethermine implements ActionListener, WindowStateListener {
 							e.printStackTrace();
 						}
 					} else {
-						System.out.println(" no");
 						try {
 							rePanel(false);
 						} catch (IOException | InterruptedException e) {
