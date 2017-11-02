@@ -45,6 +45,7 @@ public class Ethermine implements ActionListener, WindowStateListener {
 	CheckboxMenuItem notifications;
 	MenuItem currHashItem;
 	MenuItem avgHashItem;
+	MenuItem timeToNextItem;
 
 	public static void main(String[] args) throws IOException {
 		new Ethermine().run();
@@ -116,10 +117,13 @@ public class Ethermine implements ActionListener, WindowStateListener {
 						+ " MH/s");
 		avgHashItem = new MenuItem("Avg: "
 				+ Math.floor(Double.parseDouble(getValue(output, "averageHashrate")) / 1000000.0 * 100) / 100 + "MH/s");
+		timeToNextItem = new MenuItem("Update in: " + formatTiming(210000 - System.currentTimeMillis() + prevTimeMillis,
+				210000 - System.currentTimeMillis() + prevTimeMillis));
 		popup.add(quitItem);
 		popup.add(maximizeItem);
 		popup.addSeparator();
 		popup.add(notifications);
+		popup.add(timeToNextItem);
 		popup.addSeparator();
 		popup.add(currHashItem);
 		popup.add(avgHashItem);
@@ -200,6 +204,8 @@ public class Ethermine implements ActionListener, WindowStateListener {
 					+ "MH/s");
 		}
 		timeToNext.setText("Update in: " + formatTiming(210000 - System.currentTimeMillis() + prevTimeMillis,
+				210000 - System.currentTimeMillis() + prevTimeMillis));
+		timeToNextItem.setLabel("Update in: " + formatTiming(210000 - System.currentTimeMillis() + prevTimeMillis,
 				210000 - System.currentTimeMillis() + prevTimeMillis));
 	}
 
