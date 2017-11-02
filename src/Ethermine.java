@@ -117,7 +117,7 @@ public class Ethermine implements ActionListener, WindowStateListener {
 				"Curr: " + Math.floor(Double.parseDouble(getValue(output, "currentHashrate")) / 1000000.0 * 100) / 100
 						+ " MH/s");
 		avgHashItem = new MenuItem("Avg: "
-				+ Math.floor(Double.parseDouble(getValue(output, "averageHashrate")) / 1000000.0 * 100) / 100 + "MH/s");
+				+ Math.floor(Double.parseDouble(getValue(output, "averageHashrate")) / 1000000.0 * 100) / 100 + " MH/s");
 		timeToNextItem = new MenuItem("Update in: " + formatTiming(210000 - System.currentTimeMillis() + prevTimeMillis,
 				210000 - System.currentTimeMillis() + prevTimeMillis));
 		popup.add(quitItem);
@@ -202,7 +202,7 @@ public class Ethermine implements ActionListener, WindowStateListener {
 
 			avgHashItem.setLabel("Avg: "
 					+ Math.floor(Double.parseDouble(getValue(output, "averageHashrate")) / 1000000.0 * 100) / 100
-					+ "MH/s");
+					+ " MH/s");
 		}
 		timeToNext.setText("Update in: " + formatTiming(210000 - System.currentTimeMillis() + prevTimeMillis,
 				210000 - System.currentTimeMillis() + prevTimeMillis));
